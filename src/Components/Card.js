@@ -5,7 +5,6 @@ import Card from "react-bootstrap/Card";
 class CardContainer extends Component {
   constructor(props) {
     super(props);
-    console.log();
   }
 
   render() {
@@ -34,7 +33,7 @@ class CardContainer extends Component {
             <span style={{ fontSize: "25px" }}> {this.props.elt.qte}</span>
             <Button
               variant="danger"
-              onClick={()=>this.props.handleDecrement(this.props.elt.id)}
+              onClick={() => this.props.handleDecrement(this.props.elt.id)}
             >
               -
             </Button>{" "}
@@ -42,7 +41,7 @@ class CardContainer extends Component {
         </Card>
         <div>
           <h1>Price</h1>
-          <h1>55</h1>
+          <h1>{this.props.elt.price}</h1>
         </div>
       </div>
     );

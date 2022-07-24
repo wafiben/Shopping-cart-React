@@ -13,8 +13,7 @@ class ListOfArticle extends Component {
             key={elt.id}
             elt={elt}
             handleIncrement={this.props.handleIncrement}
-            
-           handleDecrement ={this.props.handleDecrement}
+            handleDecrement={this.props.handleDecrement}
           />
         ))}
         <hr />
