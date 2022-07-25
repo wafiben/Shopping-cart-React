@@ -41,7 +41,9 @@ class componentName extends Component {
     this.setState({ sum: this.state.sum + article.price });
   };
   getTotalDecrement = (article) => {
-    this.setState({ sum: this.state.sum - article.price });
+    if (article.qte > 0) {
+      this.setState({ sum: this.state.sum - article.price });
+    }
   };
   handleDecrement = (id) => {
     this.setState({
@@ -60,7 +62,6 @@ class componentName extends Component {
       articles: this.state.articles.filter((elt) => elt.id != id),
       sum: this.state.sum - elt.price * elt.qte,
     });
-    console.log(this.state.sum);
   };
 
   render() {
