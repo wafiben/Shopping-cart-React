@@ -6,7 +6,17 @@ class CardContainer extends Component {
   constructor(props) {
     super(props);
   }
-
+  increment = () => {
+    this.props.handleIncrement(this.props.elt.id);
+    this.props.getTotalIncrement(this.props.elt);
+  };
+  decrement = () => {
+    this.props.handleDecrement(this.props.elt.id);
+    this.props.getTotalDecrement(this.props.elt);
+  };
+  handleDelete = () => {
+    this.props.deleteArticle(this.props.elt, this.props.elt.id);
+  };
   render() {
     return (
       <div
@@ -21,20 +31,16 @@ class CardContainer extends Component {
           <Card.Body>
             <Card.Title>{this.props.elt.name}</Card.Title>
 
-            <Button variant="primary">Delete Article</Button>
+            <Button variant="primary" onClick={this.handleDelete}>
+              Delete Article
+            </Button>
           </Card.Body>
           <div style={{ marginLeft: "10px" }}>
-            <Button
-              variant="success"
-              onClick={() => this.props.handleIncrement(this.props.elt.id)}
-            >
+            <Button variant="success" onClick={this.increment}>
               +
             </Button>
             <span style={{ fontSize: "25px" }}> {this.props.elt.qte}</span>
-            <Button
-              variant="danger"
-              onClick={() => this.props.handleDecrement(this.props.elt.id)}
-            >
+            <Button variant="danger" onClick={this.decrement}>
               -
             </Button>{" "}
           </div>

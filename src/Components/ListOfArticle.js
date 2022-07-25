@@ -5,6 +5,7 @@ class ListOfArticle extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return (
       <div>
@@ -14,6 +15,9 @@ class ListOfArticle extends Component {
             elt={elt}
             handleIncrement={this.props.handleIncrement}
             handleDecrement={this.props.handleDecrement}
+            getTotalIncrement={this.props.getTotalIncrement}
+            getTotalDecrement={this.props.getTotalDecrement}
+            deleteArticle={this.props.deleteArticle}
           />
         ))}
         <hr />
