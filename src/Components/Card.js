@@ -33,7 +33,7 @@ class CardContainer extends Component {
               Delete Article
             </Button>
           </Card.Body>
-          <div style={{ marginLeft: "10px" }}>
+          <div className="m-3">
             <Button variant="success" onClick={this.increment}>
               +
             </Button>
@@ -44,8 +44,8 @@ class CardContainer extends Component {
           </div>
         </Card>
         <div>
-          <h1>Price</h1>
-          <h1>{this.props.elt.price}</h1>
+          <h3><i>Price</i></h3>
+          <h1>{this.props.elt.price} $</h1>
         </div>
       </div>
     );
