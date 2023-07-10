@@ -26,7 +26,7 @@ class componentName extends Component {
   handleIncrement = (id) => {
     this.setState({
       articles: this.state.articles.map((elt) => {
-        if (elt.id == id) {
+        if (elt.id === id) {
           return {
             ...elt,
             qte: elt.qte + 1,
@@ -48,7 +48,7 @@ class componentName extends Component {
   handleDecrement = (id) => {
     this.setState({
       articles: this.state.articles.map((elt) => {
-        if (elt.id == id && elt.qte > 0) {
+        if (elt.id === id && elt.qte > 0) {
           return { ...elt, qte: elt.qte - 1 };
         } else {
           return elt;
@@ -59,7 +59,7 @@ class componentName extends Component {
   deleteArticle = (elt, id) => {
     this.setState({
       ...this.state,
-      articles: this.state.articles.filter((elt) => elt.id != id),
+      articles: this.state.articles.filter((elt) => elt.id !== id),
       sum: this.state.sum - elt.price * elt.qte,
     });
   };
