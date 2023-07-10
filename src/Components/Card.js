@@ -3,9 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 class CardContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   increment = () => {
     this.props.handleIncrement(this.props.elt.id);
     this.props.getTotalIncrement(this.props.elt);
